@@ -1,0 +1,1173 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    color: #172033;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(124, 58, 237, 0.45),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(6, 182, 212, 0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(236, 72, 153, 0.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8faff 45%,
+            #ecfeff
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+/* ==========================================
+   JUDUL
+========================================== */
+
+h1 {
+    text-align: center;
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+    margin-bottom: 35px;
+
+    color: #172033;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 4px 15px rgba(79, 70, 229, 0.15);
+}
+
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card {
+    position: relative;
+
+    min-height: 155px;
+
+    padding: 27px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    color: white;
+
+    box-shadow:
+        0 18px 35px rgba(31, 41, 55, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 45px rgba(31, 41, 55, 0.25);
+}
+
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    right: -55px;
+
+    top: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    right: 30px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+
+/* ==========================================
+   PEMASUKAN
+========================================== */
+
+.pemasukan-card {
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981 55%,
+            #34d399
+        );
+}
+
+
+/* ==========================================
+   PENGELUARAN
+========================================== */
+
+.pengeluaran-card {
+    background:
+        linear-gradient(
+            135deg,
+            #e11d48,
+            #ec4899 55%,
+            #f43f5e
+        );
+}
+
+
+/* ==========================================
+   SALDO
+========================================== */
+
+.saldo-card {
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 55%,
+            #8b5cf6
+        );
+}
+
+
+.card h2,
+.card p {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   CARD TITLE
+========================================== */
+
+.card h2 {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   CARD NOMINAL
+========================================== */
+
+.card p {
+    font-size: 28px;
+
+    font-weight: 900;
+
+    line-height: 1.3;
+
+    word-break: break-word;
+
+    color: white;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-container {
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 18px 40px rgba(31, 41, 55, 0.10);
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        border 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ==========================================
+   FORM MODE EDIT
+========================================== */
+
+.form-container.mode-edit {
+    border: 2px solid #f59e0b;
+
+    box-shadow:
+        0 18px 40px
+        rgba(245, 158, 11, 0.15);
+}
+
+
+.form-container.mode-edit h2 {
+    color: #d97706;
+}
+
+
+/* ==========================================
+   FORM TITLE
+========================================== */
+
+.form-container h2 {
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #312e81;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   LABEL
+========================================== */
+
+label {
+    display: block;
+
+    margin-top: 17px;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+
+/* ==========================================
+   INPUT & SELECT
+========================================== */
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border:
+        2px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #f9fafb;
+
+    color: #172033;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+input:hover,
+select:hover {
+    border-color: #a5b4fc;
+}
+
+
+input:focus,
+select:focus {
+    background: white;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99, 102, 241, 0.14);
+
+    transform: translateY(-1px);
+}
+
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ==========================================
+   TANGGAL
+========================================== */
+
+#tanggal {
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   NOMINAL
+========================================== */
+
+#nominal {
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #4338ca;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ==========================================
+   INPUT SAAT EDIT
+========================================== */
+
+.form-container.mode-edit input,
+.form-container.mode-edit select {
+    border-color: #fcd34d;
+}
+
+
+.form-container.mode-edit input:focus,
+.form-container.mode-edit select:focus {
+    border-color: #f59e0b;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(245, 158, 11, 0.14);
+}
+
+
+/* ==========================================
+   TOMBOL TAMBAH
+========================================== */
+
+#btnTambah {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5,
+            #2563eb
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(79, 70, 229, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#btnTambah:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(79, 70, 229, 0.40);
+}
+
+
+#btnTambah:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   TOMBOL BATAL
+========================================== */
+
+#btnBatal {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 13px 15px;
+
+    border:
+        2px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#btnBatal:hover {
+    background: #f1f5f9;
+
+    border-color: #cbd5e1;
+
+    color: #1e293b;
+
+    transform: translateY(-2px);
+}
+
+
+#btnBatal:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   DAFTAR TRANSAKSI
+========================================== */
+
+.transaction-container {
+    padding: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 18px 40px
+        rgba(31, 41, 55, 0.10);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ==========================================
+   TITLE TABLE
+========================================== */
+
+.transaction-container h2 {
+    font-size: 23px;
+
+    font-weight: 800;
+
+    color: #312e81;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   TABLE WRAPPER
+========================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 14px;
+
+    border:
+        1px solid #e5e7eb;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table {
+    width: 100%;
+
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
+
+thead {
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+}
+
+
+th {
+    padding: 8px 16px;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: #4f46e5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    border-bottom:
+        2px solid #e0e7ff;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   SORT BUTTON
+========================================== */
+
+.sort-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #4f46e5;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.sort-btn:hover {
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    color: #312e81;
+}
+
+
+.sort-btn span {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 20px;
+
+    height: 20px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(99, 102, 241, 0.10);
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.sort-btn.sort-active {
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    color: #312e81;
+}
+
+
+.sort-btn.sort-active span {
+    background: #6366f1;
+
+    color: white;
+
+    box-shadow:
+        0 3px 8px
+        rgba(99, 102, 241, 0.25);
+}
+
+
+/* ==========================================
+   TABLE BODY
+========================================== */
+
+td {
+    padding: 16px;
+
+    font-size: 14px;
+
+    color: #374151;
+
+    border-bottom:
+        1px solid #f1f5f9;
+}
+
+
+tbody tr {
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+
+/* ==========================================
+   NOMINAL TABLE
+========================================== */
+
+.kolom-nominal {
+    font-weight: 800;
+
+    color: #312e81;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   BADGE PEMASUKAN
+========================================== */
+
+.jenis-pemasukan {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d1fae5,
+            #a7f3d0
+        );
+
+    color: #047857;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    border:
+        1px solid #6ee7b7;
+}
+
+
+/* ==========================================
+   BADGE PENGELUARAN
+========================================== */
+
+.jenis-pengeluaran {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe4e6,
+            #fbcfe8
+        );
+
+    color: #be123c;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    border:
+        1px solid #fda4af;
+}
+
+
+/* ==========================================
+   AKSI
+========================================== */
+
+.aksi-container {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   EDIT
+========================================== */
+
+.btn-edit {
+    padding: 8px 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #d97706
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px
+        rgba(245, 158, 11, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.btn-edit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 16px
+        rgba(245, 158, 11, 0.30);
+
+    filter: brightness(1.05);
+}
+
+
+.btn-edit:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   HAPUS
+========================================== */
+
+.btn-hapus {
+    padding: 8px 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fb7185,
+            #e11d48
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px
+        rgba(225, 29, 72, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+.btn-hapus:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 16px
+        rgba(225, 29, 72, 0.30);
+
+    filter: brightness(1.05);
+}
+
+
+.btn-hapus:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   BARIS SEDANG DIEDIT
+========================================== */
+
+tbody tr.sedang-diedit {
+    background:
+        linear-gradient(
+            90deg,
+            #fffbeb,
+            #fef3c7
+        );
+
+    box-shadow:
+        inset 4px 0 0 #f59e0b;
+}
+
+
+tbody tr.sedang-diedit:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #fef3c7,
+            #fde68a
+        );
+}
+
+
+/* ==========================================
+   PESAN KOSONG
+========================================== */
+
+.tidak-ada {
+    text-align: center !important;
+
+    padding: 40px !important;
+
+    color: #9ca3af !important;
+
+    font-style: italic;
+
+    font-size: 15px !important;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            90deg,
+            #818cf8,
+            #a78bfa
+        );
+
+    border-radius: 20px;
+}
+
+
+/* ==========================================
+   RESPONSIVE 850px
+========================================== */
+
+@media (max-width: 850px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        min-height: 140px;
+    }
+
+
+    .card p {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE 600px
+========================================== */
+
+@media (max-width: 600px) {
+
+    .aksi-container {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .btn-edit,
+    .btn-hapus {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    th {
+        padding: 7px 10px;
+    }
+
+
+    td {
+        padding: 12px 10px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE 480px
+========================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 18px 10px;
+    }
+
+
+    h1 {
+        font-size: 25px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .form-container,
+    .transaction-container {
+        padding: 20px;
+
+        border-radius: 17px;
+    }
+
+
+    .card {
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+
+    .card p {
+        font-size: 22px;
+    }
+
+
+    .form-container h2,
+    .transaction-container h2 {
+        font-size: 20px;
+    }
+
+
+    input,
+    select {
+        font-size: 15px;
+    }
+
+
+    .sort-btn {
+        font-size: 11px;
+
+        gap: 5px;
+    }
+
+
+    .sort-btn span {
+        min-width: 18px;
+
+        height: 18px;
+
+        font-size: 13px;
+    }
+
+}

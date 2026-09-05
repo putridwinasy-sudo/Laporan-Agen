@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laporan Agen Sinar Jaya</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Laporan Agen Sinar Jaya</h1>
+
+
+    <!-- ==========================================
+         DASHBOARD
+    =========================================== -->
+
+    <div class="dashboard">
+
+        <div class="card pemasukan-card">
+
+            <h2>Pemasukan</h2>
+
+            <p id="pemasukan">
+                Rp 0
+            </p>
+
+        </div>
+
+
+        <div class="card pengeluaran-card">
+
+            <h2>Pengeluaran</h2>
+
+            <p id="pengeluaran">
+                Rp 0
+            </p>
+
+        </div>
+
+
+        <div class="card saldo-card">
+
+            <h2>Saldo</h2>
+
+            <p id="saldo">
+                Rp 0
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         FORM TRANSAKSI
+    =========================================== -->
+
+    <div class="form-container">
+
+        <h2>Tambah Transaksi</h2>
+
+
+        <!-- JENIS -->
+
+        <label for="jenis">
+            Jenis Transaksi
+        </label>
+
+        <select id="jenis">
+
+            <option value="pemasukan">
+                Pemasukan
+            </option>
+
+            <option value="pengeluaran">
+                Pengeluaran
+            </option>
+
+        </select>
+
+
+
+        <!-- TANGGAL -->
+
+        <label for="tanggal">
+            Tanggal Transaksi
+        </label>
+
+        <input
+            type="date"
+            id="tanggal"
+        >
+
+
+
+        <!-- KETERANGAN -->
+
+        <label for="keterangan">
+            Keterangan
+        </label>
+
+        <input
+            type="text"
+            id="keterangan"
+            placeholder="Contoh: Penjualan Produk"
+            autocomplete="off"
+        >
+
+
+
+        <!-- NOMINAL -->
+
+        <label for="nominal">
+            Nominal
+        </label>
+
+        <input
+            type="text"
+            id="nominal"
+            placeholder="Contoh: 2.500.000"
+            inputmode="numeric"
+            autocomplete="off"
+        >
+
+
+
+        <!-- TOMBOL TAMBAH -->
+
+        <button
+            type="button"
+            id="btnTambah"
+        >
+            Tambah Transaksi
+        </button>
+
+
+        <!-- TOMBOL BATAL -->
+
+        <button
+            type="button"
+            id="btnBatal"
+            style="display: none;"
+        >
+            Batal Edit
+        </button>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         DAFTAR TRANSAKSI
+    =========================================== -->
+
+    <div class="transaction-container">
+
+        <h2>Daftar Transaksi</h2>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+
+                            <button
+                                class="sort-btn"
+                                data-sort="tanggal"
+                                type="button"
+                            >
+                                Tanggal
+                                <span>↕</span>
+                            </button>
+
+                        </th>
+
+
+                        <th>
+
+                            <button
+                                class="sort-btn"
+                                data-sort="keterangan"
+                                type="button"
+                            >
+                                Keterangan
+                                <span>↕</span>
+                            </button>
+
+                        </th>
+
+
+                        <th>
+
+                            <button
+                                class="sort-btn"
+                                data-sort="jenis"
+                                type="button"
+                            >
+                                Jenis
+                                <span>↕</span>
+                            </button>
+
+                        </th>
+
+
+                        <th>
+
+                            <button
+                                class="sort-btn"
+                                data-sort="nominal"
+                                type="button"
+                            >
+                                Nominal
+                                <span>↕</span>
+                            </button>
+
+                        </th>
+
+
+                        <th>
+                            Aksi
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="daftarTransaksi">
+
+                    <!-- Data transaksi muncul di sini -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="./script.js"></script>
+
+</body>
+
+</html>
